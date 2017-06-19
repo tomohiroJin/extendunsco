@@ -3,14 +3,14 @@
  * http://niku9.click
  * Released under the MIT license
  * version 0.1.1
- * (C) T_J 2016 
+ * (C) T_J 2016
  */
 (function(){
 
 	// ファンクション名称
 	var FNC_NAME = "extendunsco";
 	// バージョン
-	var VERSION = "0.0.2"
+	var VERSION = "0.0.3"
 
 	// create object
 	var root = this;
@@ -27,7 +27,7 @@
 	 * @param max 最大回数
 	 * @param min 最小値 null = 0;
 	 * @param step up 増加方法 null = ++1
-	 * @param executer function 関数 
+	 * @param executer function 関数
 	 * @return [object] executerの結果配列
      * @author  tomohiro.jin
 	 **/
@@ -73,7 +73,7 @@
      */
     _fnc.cloneDeep = _.isUndefined(_.cloneDeep) ?  function(){
         var oldObject = null;
-        
+
         if (arguments.length < 1) {
             return undefined;
         } else  if (_.isFunction(arguments[0])) {
@@ -87,15 +87,15 @@
         } else {
             return arguments[0];
         };
-        
+
         return (_.isArray(oldObject)  ?  _.map : _.mapObject)(oldObject, function(obj, index, context){
             return _fnc.cloneDeep(obj);
         });
-        
-        
-        
+
+
+
     } : _.cloneDeep;
-    
+
 	// 拡張処理
 	_.extend(_, _fnc);
 
